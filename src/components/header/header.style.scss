@@ -1,0 +1,36 @@
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  background-color: #5e1224;
+  color: wheat;
+
+  .header__logoContainer {
+    height: 100%;
+    width: 70%;
+    padding: 25px;
+    text-decoration: none;
+  }
+
+  .header__logo {
+    color: wheat;
+    padding: 5px;
+  }
+
+  .header__options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration-line: none;
+
+    .header__option {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: wheat;
+    }
+  }
+}
