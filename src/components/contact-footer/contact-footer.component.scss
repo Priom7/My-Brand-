@@ -1,0 +1,15 @@
+.contactFooter {
+  background-color: #5e1224;
+  width: 100%;
+  color: wheat;
+  display: flex;
+  justify-content: center;
+
+  .contactFooter__column {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+}

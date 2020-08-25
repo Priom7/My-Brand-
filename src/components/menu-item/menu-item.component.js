@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./menu-item.style.scss";
 
 const MenuItem = ({
@@ -25,9 +26,10 @@ const MenuItem = ({
         <h1 className='home__menu_items_content_title'>
           {title.toUpperCase()}
         </h1>
-        <span className='home__menu_items_content_subtitle'>
-          Shop Now
-        </span>
+        <div className='home__menu_items_content_subtitle'>
+          <ShoppingCartIcon></ShoppingCartIcon>
+          <span>Shop Now</span>
+        </div>
       </div>
     </div>
   );

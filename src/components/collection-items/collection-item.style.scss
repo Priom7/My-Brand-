@@ -4,8 +4,13 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
+  background-color: #5e1224;
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: -1px -1px 5px 0px rgba(0, 0, 0, 0.75);
 
   .collection__image {
+    border-radius: 15px;
     width: 100%;
     height: 95%;
     background-size: cover;
@@ -14,15 +19,25 @@
   }
 
   .collection__footer {
+    color: wheat;
     width: 100%;
     height: 5%;
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+    padding: 5px;
+    margin-bottom: 15px;
 
     .collection__name {
       width: 90%;
-      margin-bottom: 15px;
+
+      padding: 5px;
+    }
+
+    .collection__price {
+      width: 10%;
+
+      padding: 5px;
     }
   }
 }

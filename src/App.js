@@ -4,11 +4,13 @@ import "./App.css";
 import HomePage from "./page/homepage/homepage.component";
 import Shop from "./page/shopPage/shop.component";
 import Header from "./components/header/header.component";
+import ContactFooter from "./components/contact-footer/contact-footer.component";
 
 function App() {
   return (
     <div>
       <Header></Header>
+
       <div className='app'>
         <Switch>
           <Route
@@ -19,6 +21,7 @@ function App() {
           <Route path='/shop' component={Shop}></Route>
         </Switch>
       </div>
+      <ContactFooter></ContactFooter>
     </div>
   );
 }
