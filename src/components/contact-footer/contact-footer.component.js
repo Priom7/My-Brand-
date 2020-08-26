@@ -1,52 +1,44 @@
 import React from "react";
 import "./contact-footer.component.scss";
+import CONTACT_FOOTER_DATA from "./contact-footer.data";
+import ContactFooterLinks from "../links/contact-footer-links.component";
 
-function ContactFooter() {
-  return (
-    <div className='contactFooter'>
-      <div className='contactFooter__column'>
-        <div className='contactFooter__row'>
-          <h1 className='contactFooter__rowHeader'>
-            Customer Care
-          </h1>
-          <div className='contactFooter__rowItems'>
-            <p className='contactFooter__rowItem'>
-              Help Center
-            </p>
-            <p className='contactFooter__rowItem'>
-              How to Buy
-            </p>
-            <p className='contactFooter__rowItem'>
-              Track Your Order
-            </p>
-            <p className='contactFooter__rowItem'>
-              Returns & Refunds
-            </p>
-          </div>
-        </div>
+class ContactFooter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contact_footer: CONTACT_FOOTER_DATA,
+    };
+  }
 
-        <div className='contactFooter__row'>
-          <h1 className='contactFooter__rowHeader'>
-            Social Links
-          </h1>
-          <div className='contactFooter__rowItems'>
-            <p className='contactFooter__rowItem'>
-              Facebook
-            </p>
-            <p className='contactFooter__rowItem'>
-              Instagram
-            </p>
-            <p className='contactFooter__rowItem'>
-              Youtube
-            </p>
-            <p className='contactFooter__rowItem'>
-              Tweeter
-            </p>
-          </div>
+  render() {
+    const { contact_footer } = this.state;
+
+    return (
+      <div className='contactFooter'>
+        <div className='contactFooter__column'>
+          {contact_footer.map(
+            ({ id, name, ...otherLinks }) => (
+              <div key={id} className='contactFooter__row'>
+                <h1
+                  key={id}
+                  className='contactFooter__rowHeader'
+                >
+                  {name}
+                </h1>
+                <div className='contactFooter__rowItems'>
+                  <ContactFooterLinks
+                    key={id}
+                    {...otherLinks}
+                  ></ContactFooterLinks>
+                </div>
+              </div>
+            )
+          )}
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default ContactFooter;
