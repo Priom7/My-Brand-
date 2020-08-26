@@ -13,6 +13,8 @@
   border: 1px solid #5e1224;
   cursor: pointer;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: #5e1224;
@@ -25,6 +27,18 @@
     color: wheat;
     border: 1px solid wheat;
     border-radius: 15px;
+
+    &:hover {
+      background-color: wheat;
+      color: #5e1224;
+      border: 1px solid #5e1224;
+    }
+  }
+
+  &.inverted {
+    background-color: #5e1224;
+    color: wheat;
+    border: 1px solid wheat;
 
     &:hover {
       background-color: wheat;
