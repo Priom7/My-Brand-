@@ -1,6 +1,6 @@
 import React from "react";
-import "./banner.component.scss";
-import BANNER_DATA from "./banner.data";
+import "./banner.style.scss";
+import BANNER_DATA from "../../ALL_DUMMY_DATA/banner.data";
 
 class Banner extends React.Component {
   constructor(props) {

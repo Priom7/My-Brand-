@@ -1,6 +1,6 @@
 import React from "react";
 import "./contact-footer.component.scss";
-import CONTACT_FOOTER_DATA from "./contact-footer.data";
+import CONTACT_FOOTER_DATA from "../../ALL_DUMMY_DATA/contact-footer.data";
 import ContactFooterLinks from "../links/contact-footer-links.component";
 
 class ContactFooter extends React.Component {

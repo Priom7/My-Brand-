@@ -1,6 +1,6 @@
-import brand1 from "../../assets/images/brand1.png";
-import brand2 from "../../assets/images/brand2.png";
-import brand3 from "../../assets/images/brand3.png";
+import brand1 from "../assets/images/brand1.png";
+import brand2 from "../assets/images/brand2.png";
+import brand3 from "../assets/images/brand3.png";
 const BRAND_DATA = [
   {
     id: "1",

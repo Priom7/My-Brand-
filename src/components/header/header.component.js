@@ -1,12 +1,18 @@
 import React from "react";
+import { auth } from "../../firebase/firebase";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import BusinessIcon from "@material-ui/icons/Business";
 import StoreIcon from "@material-ui/icons/Store";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
 import "./header.style.scss";
+import Cart from "../cart/cart.component";
+import CartDropDown from "../cart-dropdown/cartDropDown.component";
 
-const Header = () => {
+const Header = ({ currentUser, hidden }) => {
   return (
     <div className='header'>
       <Link className='header__logoContainer' to='/'>
@@ -27,9 +33,33 @@ const Header = () => {
           <ContactSupportIcon></ContactSupportIcon>{" "}
           <span>Contact</span>
         </Link>
+        {currentUser ? (
+          <div
+            className='header__option'
+            onClick={() => auth.signOut()}
+          >
+            <ExitToAppIcon></ExitToAppIcon>
+            <span>SignOut</span>
+          </div>
+        ) : (
+          <Link className='header__option' to='/auth'>
+            <ContactMailIcon></ContactMailIcon>{" "}
+            <span>SignUp</span>
+          </Link>
+        )}
+        <Cart></Cart>
       </div>
+      {hidden ? null : <CartDropDown></CartDropDown>}
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = ({
+  user: { currentUser },
+  cart: { hidden },
+}) => ({
+  currentUser,
+  hidden,
+});
+
+export default connect(mapStateToProps)(Header);

@@ -1,7 +1,7 @@
 import React from "react";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import "./brands.style.scss";
-import BRAND_DATA from "./brand.data";
+import BRAND_DATA from "../../ALL_DUMMY_DATA/brand.data";
 
 class Brands extends React.Component {
   constructor(props) {
