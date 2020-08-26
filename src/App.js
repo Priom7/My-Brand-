@@ -7,11 +7,14 @@ import Shop from "./page/shopPage/shop.component";
 import Header from "./components/header/header.component";
 import ContactFooter from "./components/contact-footer/contact-footer.component";
 import AuthPage from "./page/authPage/authPage";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "./redux/user/user.selector";
 import { setCurrentUser } from "./redux/user/user.action";
 import {
   auth,
   createUserProfileDocument,
 } from "./firebase/firebase";
+import CheckOutPage from "./page/checkoutPage/checkOutPage.component";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -66,6 +69,11 @@ class App extends React.Component {
                 )
               }
             ></Route>
+            <Route
+              exact
+              path='/checkout'
+              component={CheckOutPage}
+            ></Route>
           </Switch>
         </div>
         <ContactFooter></ContactFooter>
@@ -74,8 +82,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
